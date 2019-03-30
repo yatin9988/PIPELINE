@@ -1,0 +1,27 @@
+import pygame
+pygame.init()
+screen=pygame.display.set_mode([1850,1000])
+pygame.display.set_caption("HAVE A NICE DAY")
+pic=pygame.image.load("m3.jpg")
+pic=pygame.transform.scale(pic,(500,400))
+keep_going=True
+picx=0
+picy=0
+speedx=1
+speedy=1
+yat=pygame.time.Clock()
+while keep_going:
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            keep_going=False
+    yat.tick(150)
+    screen.fill((0,0,0))
+    screen.blit(pic,(picx,picy))        
+    pygame.display.update()
+    picx+=speedx
+    picy+=speedy
+    if picx<-100 or picx+pic.get_width()>=2000:
+        speedx=-speedx
+    if picy<-50 or picy+pic.get_height()>=1050:
+        speedy=-speedy
+pygame.quit()    
