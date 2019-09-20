@@ -9,7 +9,7 @@ picx=0
 picy=0
 speedx=5
 speedy=5
-black=(0,0,0)
+black=(1,1,1)
 count=0
 yatin=pygame.time.Clock()
 while keep_going:
